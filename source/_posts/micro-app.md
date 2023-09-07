@@ -64,7 +64,24 @@ element plus 当前可以全局导入，如果需要按需导入修改命名空�
 @forward 'element-plus/theme-chalk/src/mixins/config.scss' with (
   $namespace: 'sk'
 );
+
+
 // ...
 
 ```
-
+在 vite.config.ts 中导入 styles/element/index.scss：
+```ts
+import { defineConfig } from 'vite'
+// https://vitejs.dev/config/
+export default defineConfig({
+  // ...
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `@use "~/styles/element/index.scss" as *;`,
+      },
+    },
+  },
+  // ...
+})
+```
