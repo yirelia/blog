@@ -57,7 +57,7 @@ element plus 当前可以全局导入，如果需要按需导入修改命名空�
   $namespace: 'sk'
 );
 
-
+@use "element-plus/theme-chalk/src/index.scss" as *;
 // ...
 
 ```
