@@ -9,6 +9,7 @@ hexo g
 ```
 
 ```bash
+# 发布
 hexo d
 ```
 
