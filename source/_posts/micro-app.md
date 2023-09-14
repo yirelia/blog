@@ -266,7 +266,7 @@ if (isInMicroApp()) {
    - 如果基座样式库使用 elment-plus(2.2.0版本及以上) 可以通过自定义命名空间规避污染
    - 开启沙盒模式进行样式隔离
 ## iframe 沙箱下 vite 子应用的接口请求总是 cors-error
-![](/img/micro/cors-error.png)
+![](/img/micro-app/cors-error.png)
 
 原因可能在 [MDN COROS policy](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/CORS/Errors/CORSNotSupportingCredentials)
 
