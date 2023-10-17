@@ -91,6 +91,7 @@ const spawnCommand = (command, params, cwd) => {
     const result = spawn(command, params, {
       cwd,
       stdio: 'inherit', // 打印命令原始输出
+      // 在mac 环境下出问题是可以尝试直接将shell 设置为true
       shell: process.platform === 'win32', // 兼容windows系统
     });
 
@@ -220,6 +221,8 @@ async function restartDocker() {
   const spinner = Ora(chalk.cyan(`[info] restart docker\n`)).start();
   // 重启docker 容器
   try {
+    // 如果需要输入密码 可以常通过 sudo -S 配置 从标准输入流获取密码
+    // echo ${passsword} | sudo docker restart all
     await runCommand(`docker restart all`, config.path).catch((err) => {
       console.log("[error]unzip: ", err);
     });
