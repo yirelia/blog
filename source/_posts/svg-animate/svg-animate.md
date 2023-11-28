@@ -2,6 +2,7 @@
 title: svg 动画
 date: 2023-09-10 10:38:39
 tags: svg
+category: SVG
 ---
 
 # svg 动画
