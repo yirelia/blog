@@ -77,8 +77,6 @@ exec('taskkill /f /t /im app.exe', (err, stdout, stderr) => {
   console.log(err)
  return;
  }
- console.log(`stdout: ${stdout}`);
- console.log(`stderr: ${stderr}`);
 });
 ```
 # 应用单开
@@ -103,4 +101,33 @@ app.whenReady().then(()=> {
     win!.show();
   });
 })
+```
+
+# win7 桌面端支持
+electron23.0 之后不再支持win7&&win8 等，详情见[官方文档](https://github.com/electron/electron/tree/main)
+如果程序需要支持可以将electron 降级版本
+ - electron 22.0
+ - electron-builder 22.10.5
+
+ # win7 打包后程序安装提示启动错误
+ 需要安装依微软常用的依赖库
+ [微软常用运行库合集](/resource/微软常用运行库合集_2023.03.03.exe)
+
+ # 客户端 getAppPath 含有 app.asar 问题处理
+ getAppPath()可以获取到程序运行跟目录，打包后会有app.asar
+ 当前可以直接通过replace 函数替换 app.asar
+ 例如：
+ ```ts
+ const appRootPath = app.getAppPath().repace('app.asar', '')
+
+ ```
+# vite-vue3 页面中图片显示错误问题处理
+图片地址为类似
+```ts
+const img = '/img/test.png'
+```
+本地开发时预览正常electron 打包线上后显示地址找不到
+处理方案将图片地址转为绝对地址路径
+```ts
+const img = new URL('/image/sludge.png', import.meta.url).href
 ```
