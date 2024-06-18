@@ -41,6 +41,7 @@ graph.value.addNode(nodes)
 ```
 
 经测试耗时大概：页面会卡死，等待响应
+
 ## 分批 [requestAnimationFrame](https://developer.mozilla.org/zh-CN/docs/Web/API/Window/requestAnimationFrame) 渲染处理
 
 ```ts
