@@ -1,5 +1,5 @@
 ---
-title: inkscape
+title: inkscape 工具使用
 date: 2023-09-08 22:50:09
 tags: svg
 ---
