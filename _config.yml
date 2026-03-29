@@ -44,12 +44,24 @@ post_asset_folder: true
 relative_link: true
 future: true
 highlight:
-  enable: true
+  enable: false
   line_number: true
   auto_detect: false
   tab_replace: ''
   wrap: true
-  hljs: false
+  hljs: true
+
+hljs:
+  enable: true
+  line_number: frontend
+  trim_indent: backend
+  copy_code: true
+  label:
+    left: Code
+    right: ':'
+    # copy: Copy Code
+
+
 prismjs:
   enable: false
   preprocess: true
